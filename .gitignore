@@ -1,0 +1,44 @@
+# Node.js related files and directories to ignore
+
+# Dependency directories
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for temporary files
+tmp/
+temp/
+
+# Output of npm pack
+*.tgz
+
+# Compiled binary addons
+build/
+
+# Coverage directory used by testing frameworks
+coverage/
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+.db
