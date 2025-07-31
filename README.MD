@@ -1,4 +1,11 @@
 # OAuth Assert
+![License](https://img.shields.io/github/license/nahom-d54/better-oauth-assert?color=yellow)
+![Build](https://img.shields.io/github/actions/workflow/status/nahom-d54/better-oauth-assert/ci.yml)
+![npm bundle size](https://img.shields.io/bundlephobia/min/better-oauth-assert)
+![NPM Version](https://img.shields.io/npm/v/better-oauth-assert?color=red)
+
+
+> A lightweight plugin to assert and validate OAuth clients and flows.
 
 ## Overview
 OAuth Assert is a project designed to simplify the process of testing and validating OAuth implementations. It provides tools and utilities to ensure secure and compliant authentication flows.
