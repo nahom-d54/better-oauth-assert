@@ -1,9 +1,14 @@
 {
-  "name": "oauth-assert",
-  "version": "1.0.0",
-  "description": "",
+  "name": "better-oauth-assert",
+  "version": "1.0.2",
+  "description": "A better-auth plugin for OAuth assertion, providing utilities for better authentication workflows.",
   "scripts": {
-    "test": "vitest run"
+    "test": "vitest run",
+    "lint": "tsc",
+    "format": "biome format . --write",
+    "build": "tsup",
+    "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish",
+    "ci": "pnpm run lint && pnpm run test && pnpm run build"
   },
   "keywords": [
     "better-auth",
@@ -11,10 +16,9 @@
     "typescript",
     "plugin",
     "oauth",
-    "oauth-assert-plugin"
+    "better-oauth-assert"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Nahom-d54",
   "packageManager": "pnpm@10.7.1",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -26,6 +30,15 @@
       "import": "./dist/index.mjs"
     }
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nahom-d54/better-oauth-assert/issues"
+  },
+  "homepage": "https://github.com/nahom-d54/better-oauth-assert#readme",
   "peerDependencies": {
     "@better-auth/utils": "^0.2.6",
     "@better-fetch/fetch": "^1.1.18",
@@ -38,6 +51,7 @@
     "@better-auth/utils": "^0.2.6",
     "@better-fetch/fetch": "^1.1.18",
     "@biomejs/biome": "^2.1.3",
+    "@changesets/cli": "^2.29.5",
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^24.1.0",
     "@types/pg": "^8.15.5",
@@ -50,6 +64,7 @@
     "mysql2": "^3.14.3",
     "oauth2-mock-server": "^8.1.0",
     "pg": "^8.16.3",
+    "tsup": "^8.5.0",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   },

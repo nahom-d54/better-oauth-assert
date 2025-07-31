@@ -42,3 +42,5 @@ coverage/
 .DS_Store
 Thumbs.db
 .db
+.tsbuildinfo
+dist
