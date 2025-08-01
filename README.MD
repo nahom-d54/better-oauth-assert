@@ -27,25 +27,52 @@ pnpm install better-oauth-assert
 Run the application using the following command:
 
 ```typescript
+
+const clientAssertionFunction = async () => {
+  const {
+    ESIGNET_CLIENT_ID,
+    ESIGNET_TOKEN_ENDPOINT,
+    ESIGNET_PRIVATE_KEY_BASE64,
+  } = process.env;
+
+  const header = { alg: "RS256", typ: "JWT" };
+
+  const jwkJson = Buffer.from(ESIGNET_PRIVATE_KEY_BASE64!, "base64").toString();
+  const jwk = JSON.parse(jwkJson);
+  const privateKey = await importJWK(jwk, "RS256");
+
+  const clientAssertion = await new SignJWT({
+    iss: ESIGNET_CLIENT_ID,
+    sub: ESIGNET_CLIENT_ID,
+    aud: ESIGNET_TOKEN_ENDPOINT,
+  })
+    .setProtectedHeader(header)
+    .setIssuedAt()
+    .setExpirationTime("2h")
+    .sign(privateKey);
+
+  return clientAssertion;
+}
+
 import { betterAuth } from "better-auth"
 import { oAuthAssert } from "better-oauth-assert"
  
 export const auth = betterAuth({
     // ... other config options
     plugins: [
-			oAuthAssert({
-				config: [
-					{
-						providerId: "provider-id" ,
-						discoveryUrl: "http://example.com/.well-known/openid-configuration",
-						clientId: clientId,
-						clientAssertion: clientAssertionFunction,
+		oAuthAssert({
+			config: [
+				{
+					providerId: "provider-id" ,
+					discoveryUrl: "http://example.com/.well-known/openid-configuration",
+					clientId: clientId,
+					clientAssertion: clientAssertionFunction,
 					 // ... other config options
                 }, 
                 // Add more providers as needed
-				],
-			}),
-		],
+			],
+		}),
+	],
 })
 ```
 
