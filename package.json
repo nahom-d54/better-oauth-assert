@@ -1,6 +1,6 @@
 {
   "name": "better-oauth-assert",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A better-auth plugin for OAuth assertion, providing utilities for better authentication workflows.",
   "scripts": {
     "test": "vitest run",
