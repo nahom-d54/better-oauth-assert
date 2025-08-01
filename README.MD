@@ -3,6 +3,8 @@
 ![Build](https://img.shields.io/github/actions/workflow/status/nahom-d54/better-oauth-assert/ci.yml)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/better-oauth-assert)
 ![NPM Version](https://img.shields.io/npm/v/better-oauth-assert?color=red)
+![NPM Downloads](https://img.shields.io/npm/dm/better-oauth-assert?color=8A2BE2)
+
 
 
 > A lightweight plugin to assert and validate OAuth clients and flows.
