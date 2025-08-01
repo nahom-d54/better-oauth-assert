@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/nahom-d54/better-oauth-assert#readme",
   "peerDependencies": {
-    "@better-auth/utils": "^0.2.6",
+    "@better-auth/utils": "^0.2.0",
     "@better-fetch/fetch": "^1.1.18",
     "better-auth": "^1.3.4",
     "better-call": "^1.0.12",
